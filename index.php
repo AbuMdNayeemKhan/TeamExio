@@ -17,17 +17,15 @@
         ?>
     <!-- Header menu section ended -->
 
-    <!-- Sidebar menu section start -->
-     <h3>sidebar Menu</h3>
-        <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'sidebar menu',
-                    'fallback_cb' => false
-                )
-            );
-        ?>
-    <!-- Sidebar menu section ended -->
+    <!-- Main Body section start -->
+    <div class='post'>
+        <?php while(have_posts()) : the_post(); ?>
+            <?php the_post_thumbnail(); ?>
+            <h2><?php the_title(); ?></h2>
+            <p><?php the_content(); ?></p>
+        <?php endwhile;?>
+    </div>
+    <!-- Main Body section ended -->
 
     <!-- Footer menu section start -->
      <h3>footer Menu</h3>
